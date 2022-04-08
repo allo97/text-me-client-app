@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'text-me-login',
@@ -10,8 +10,8 @@ export class LoginComponent implements OnInit {
   public loginValid = true;
 
   public form = this.fb.group({
-    email: ['', []],
-    password: ['', []]
+    email: ['', [Validators.required]],
+    password: ['', [Validators.required]]
   });
   constructor(private fb: FormBuilder) {}
 

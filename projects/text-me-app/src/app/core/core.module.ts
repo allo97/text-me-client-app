@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -9,7 +10,7 @@ import { MainLayoutComponent } from './layout/main-layout/main-layout.component'
 
 @NgModule({
   declarations: [MainLayoutComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, RouterModule, MatToolbarModule, MatButtonModule],
+  imports: [BrowserModule, BrowserAnimationsModule, RouterModule, MatToolbarModule, MatButtonModule, MatIconModule],
   exports: [MainLayoutComponent],
   // providers: [],
   bootstrap: [AppComponent]

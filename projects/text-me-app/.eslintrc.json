@@ -31,7 +31,8 @@
             "prefix": "text-me",
             "style": "kebab-case"
           }
-        ]
+        ],
+        "@typescript-eslint/unbound-method": "off"
       }
     },
     {

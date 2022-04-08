@@ -11,12 +11,8 @@
         <input matInput type="password" placeholder="Password" formControlName="password" name="password" required />
         <mat-error> Please provide a valid password </mat-error>
       </mat-form-field>
-      <!-- <div class="btn-group" role="group" aria-label="Basic example"> -->
-      <button class="btn btn-outline-primary mr-1" href="#">Sign up</button>
-      <button class="btn btn-outline-primary" href="#">Login</button>
-      <button (click)="login()" mat-raised-button color="primary" [disabled]="!form.valid">Login</button>
-      <button (click)="login()" mat-raised-button color="primary" [disabled]="!form.valid">Register</button>
-      <!-- </div> -->
+      <button (click)="login()" class="me-3" mat-raised-button color="primary" [disabled]="!form.valid">Login</button>
+      <button [routerLink]="['/register']" mat-raised-button color="primary">Register</button>
     </form>
   </mat-card-content>
 </mat-card>

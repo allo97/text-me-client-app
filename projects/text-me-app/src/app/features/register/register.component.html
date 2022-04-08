@@ -1,0 +1,44 @@
+<mat-card>
+  <mat-card-content>
+    <form [formGroup]="form">
+      <h2>Register</h2>
+      <mat-error *ngIf="!loginValid"> The username and password were not recognized </mat-error>
+      <mat-form-field>
+        <input matInput placeholder="First name" formControlName="firstName" name="firstName" />
+        <mat-error> Value is required </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Last name" formControlName="lastName" name="lastName" />
+        <mat-error> Value is required </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Email" formControlName="email" name="email" />
+        <mat-error *ngIf="form?.get('email')?.errors?.['required']"> Value is required </mat-error>
+        <mat-error *ngIf="form?.get('email')?.errors?.['email']"> Please provide a valid email address </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="password" placeholder="Password" formControlName="password" name="password" />
+        <mat-error> Value is required </mat-error>
+        <mat-error *ngIf="form?.get('password')?.errors?.['minLength']">
+          Password must be at least 8 characters
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          type="password"
+          placeholder="Confirm password"
+          formControlName="confirmPassword"
+          name="confirmPassword"
+        />
+        <!-- <mat-error *ngIf="form?.get('confirmPassword')?.errors?.['required']"> Value is required </mat-error>
+        <mat-error *ngIf="form?.get('confirmPassword')?.errors?.['minLength']">
+          Password must be at least 8 characters
+        </mat-error>
+        <mat-error *ngIf="form?.errors?.['mustMatch']">Passwords must match </mat-error> -->
+        <div class="error" *ngIf="form?.errors?.['mustMatch']">Passwords must match</div>
+      </mat-form-field>
+      <button (click)="register()" mat-raised-button color="primary" [disabled]="!form.valid">Register</button>
+    </form>
+  </mat-card-content>
+</mat-card>
