@@ -28,11 +28,7 @@ export class RegisterComponent implements OnInit {
     console.log('on init');
   }
 
-  public login() {
-    console.log(this.form.value);
-  }
-
-  public register() {
+  public create() {
     console.log(this.form.value);
   }
 }
